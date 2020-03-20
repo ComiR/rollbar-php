@@ -135,7 +135,6 @@ class CurlSender implements SenderInterface
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($handle, CURLOPT_TIMEOUT, $this->timeout);
         curl_setopt($handle, CURLOPT_HTTPHEADER, array('X-Rollbar-Access-Token: ' . $accessToken));
-        curl_setopt($handle, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
 
         if (!is_null($this->caCertPath)) {
             curl_setopt($handle, CURLOPT_CAINFO, $this->caCertPath);
